@@ -1,0 +1,121 @@
+:root{
+  --bg: #ffffff;
+  --card-bg: #8f8f8f; /* abu gelap seperti gambar */
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.95);
+}
+
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* container */
+.page{
+  max-width: 960px; /* sesuaikan */
+  margin: 30px auto;
+  padding: 20px;
+  text-align:center;
+}
+
+/* Judul besar */
+.page-title{
+  font-family: "Fredoka One", "Poppins", sans-serif;
+  font-size: 48px;
+  line-height: 0.95;
+  margin: 10px 0 40px;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+/* grid 3 kolom */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 22px;
+  align-items: start;
+  justify-items: center;
+}
+
+/* kartu */
+.card{
+  width: 280px;
+  height: 380px;
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+}
+
+/* avatar bundar */
+.avatar{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid rgba(255,255,255,0.06);
+  margin-top: 4px;
+  background: #ccc;
+}
+
+/* nama besar bergaya */
+.name{
+  margin: 18px 0 8px;
+  font-family: "Fredoka One", "Poppins", sans-serif;
+  font-size: 34px;
+  color: #fff;
+  text-transform: lowercase;
+}
+
+/* teks id dan pesan */
+.meta{
+  margin-top: 6px;
+  width: 100%;
+  text-align: left;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.35;
+  font-size: 14px;
+  padding-left: 6px;
+}
+
+/* kecilkan label */
+.meta .label{
+  font-weight: 600;
+  margin-right: 6px;
+  color: #fff;
+}
+
+/* ikon role di bawah */
+.role-icon{
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  margin-top: auto;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: #2b2b2b;
+}
+
+/* responsive: kalau layar kecil jadi 2 kolom atau 1 kolom */
+@media (max-width: 880px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+  .page{ padding: 18px; }
+}
+@media (max-width: 520px){
+  .grid{ grid-template-columns: 1fr; gap: 16px; }
+  .card{ width: 90%; height: auto; padding-bottom: 20px; }
+  .avatar{ width:120px; height:120px; }
+  .name{ font-size: 28px; }
+}
